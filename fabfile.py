@@ -24,7 +24,7 @@ def setup(branch='develop'):
     """
     git_clone('git@github.com:tryton/trytond.git', branch)
     all_repos = requests.get(
-        'https://api.github.com/orgs/tryton/repos'
+        'https://api.github.com/orgs/tryton/repos?per_page=1000'
     ).json()
     for repo in all_repos:
         if repo['name'] in ['proteus', 'tryton', 'sao']:
